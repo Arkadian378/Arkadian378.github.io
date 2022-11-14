@@ -1,0 +1,313 @@
+<html>
+
+<head>
+    <title>X AMORE - Our Story</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+
+
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700i" rel="stylesheet">
+
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+    <script src="booklet/jquery.easing.1.3.js" type="text/javascript"></script>
+    <script src="booklet/jquery.booklet.1.1.0.min.js" type="text/javascript"></script>
+
+    <link href="booklet/jquery.booklet.1.1.0.css" type="text/css" rel="stylesheet" media="screen" />
+    <link rel="shortcut icon" href="../icone-de-coeur-violet-1.png" type="image/x-icon">
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-image: linear-gradient(to top, #7028e4 0%, #e5b2ca 100%);
+            color: #444;
+            font-size: 12px;
+            color: #333;
+            font-family: 'Oswald', sans-serif;
+        }
+        
+        .booklet {
+            width: 900px;
+            height: 607px;
+            position: relative;
+            margin: 0 auto 10px;
+            -moz-box-shadow: 0px 0px 1px #fff;
+            -webkit-box-shadow: 0px 0px 1px #fff;
+            box-shadow: 0px 0px 1px #fff;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+        }
+        
+        .booklet .b-wrap-left {
+            background: #fff url(images/left_bg.jpg) no-repeat top left;
+            -webkit-border-top-left-radius: 10px;
+            -webkit-border-bottom-left-radius: 10px;
+            -moz-border-radius-topleft: 10px;
+            -moz-border-radius-bottomleft: 10px;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+        
+        .booklet .b-wrap-right {
+            background: #efefef url(images/right_bg.jpg) no-repeat top left;
+            -webkit-border-top-right-radius: 10px;
+            -webkit-border-bottom-right-radius: 10px;
+            -moz-border-radius-topright: 10px;
+            -moz-border-radius-bottomright: 10px;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        
+        .booklet .b-counter {
+            bottom: 10px;
+            position: absolute;
+            display: block;
+            width: 90%;
+            height: 20px;
+            border-top: 1px solid #ddd;
+            color: #222;
+            text-align: center;
+            font-size: 12px;
+            padding: 5px 0 0;
+            background: transparent;
+            -moz-box-shadow: 0px -1px 1px #fff;
+            -webkit-box-shadow: 0px -1px 1px #fff;
+            box-shadow: 0px -1px 1px #fff;
+            opacity: 0.8;
+        }
+        
+        .book_wrapper {
+            margin: 0 auto;
+            padding-top: 50px;
+            width: 905px;
+            height: 540px;
+            position: relative;
+            background: transparent url(images/bg.png) no-repeat 9px 27px;
+        }
+        
+        .book_wrapper h1 {
+            color: orange;
+            margin: 5px 5px 5px 15px;
+            font-size: 24px;
+            background: transparent url(images/h1.png) no-repeat bottom left;
+            padding-bottom: 7px;
+            text-transform: uppercase;
+            font-weight: normal;
+        }
+        
+        .book_wrapper p {
+            font-size: 15px;
+            margin: 5px 5px 5px 15px;
+        }
+        
+        .book_wrapper a.article,
+        .book_wrapper a.demo {
+            background: transparent url(images/circle.png) no-repeat 50% 0px;
+            display: block;
+            width: 95px;
+            height: 41px;
+            text-decoration: none;
+            outline: none;
+            font-size: 16px;
+            color: #555;
+            float: left;
+            line-height: 41px;
+            padding-left: 47px;
+        }
+        
+        .book_wrapper a.demo {
+            margin-left: 50px;
+        }
+        
+        .book_wrapper a.article:hover,
+        .book_wrapper a.demo:hover {
+            background-position: 50% -41px;
+            color: #13386a;
+        }
+        
+        .book_wrapper img {
+            margin: 10px 0px 5px 35px;
+            width: 300px;
+            padding: 4px;
+            border: 1px solid #ddd;
+            -moz-box-shadow: 1px 1px 1px #fff;
+            -webkit-box-shadow: 1px 1px 1px #fff;
+            box-shadow: 1px 1px 1px #fff;
+        }
+        
+        .booklet .b-wrap-right img {
+            border: 1px solid #E6E3C2;
+        }
+        
+        a#next_page_button,
+        a#prev_page_button {
+            display: none;
+            position: absolute;
+            width: 41px;
+            height: 40px;
+            cursor: pointer;
+            margin-top: -20px;
+            top: 50%;
+            background: transparent url(images/buttons.png) no-repeat 0px -40px;
+        }
+        
+        a#prev_page_button {
+            left: -30px;
+        }
+        
+        a#next_page_button {
+            right: -30px;
+            background-position: -41px -40px;
+        }
+        
+        a#next_page_button:hover {
+            background-position: -41px 0px;
+        }
+        
+        a#prev_page_button:hover {
+            background-position: 0px 0px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <br><br><br><br><br>
+
+    <div class="book_wrapper">
+        <a id="next_page_button"></a>
+        <a id="prev_page_button"></a>
+
+        <div id="mybook" style="display:none;">
+            <div class="b-load">
+                <div>
+                    <img src="images/1.jpg" alt="" />
+                    <h1>2 Ottobre</h1>
+                    <p>Oggi ho conosciuto una ragazza Axel?? Boh non lo so mi ha detto di essere la migliore amica di Octavio. Non so chi sia ma sicuramente ha ottimi gusti musicali AHAHAH. È simpatica, credo, domani mi dovrebbe scrivere. Mhhh non ci credo
+                        ma ci spero :)
+                    </p>
+                </div>
+                <div>
+                    <img src="images/2.jpg" alt="" />
+                    <h1>8 Ottobre</h1>
+                    <p>Mh…non so come iniziare. Ho un problema. Mi piace Noemi. Ho capito chi era parlandoci, l'avevo già adocchiata a inizio anno ma con la fiducia che ho in me stesso non gli avrei mai parlato. E ti chiederai dov'è il problema? Beh penso
+                        che piaccia anche a mio fratello e che lei sia interessata. Se si trova bene con Simone sono contento per lei. Mi devo rassegnare :c</p>
+
+                </div>
+                <div>
+                    <img src="images/3.jpg" alt="" />
+                    <h1>9 Ottobre</h1>
+                    <p>Ho la conferma. Siamo usciti e dopo un po' l'ho vista un po' giù…mi dispiaceva ma non potevi farci niente. Era incazzata perché gli piaceva Simone e lui l'ha illusa. Spero solo di poterla vedere felice :c .
+                    </p>
+
+                </div>
+                <div>
+                    <img src="images/4.jpg" alt="" />
+                    <h1>13 Ottobre</h1>
+                    <p>Mi piace troppo. È simpatica, bella, mi fa sentire bene. Vorrei dirgli che mi piace ma non vorrei affrettare i tempi. Mi chiedo se lei abbia sentito il bacio sulla testa mentre dormiva su di me oggi in autobus. Ho paura ad espormi
+                        troppo ma proprio non ce la faccio a non trattarla così. Spero nel meglio :/
+                    </p>
+
+                </div>
+                <div>
+                    <img src="images/5.jpg" alt="" />
+                    <h1>14 Ottobre</h1>
+                    <p>STO IMPAZZENDO. È SUCCESSO NON CI CREDO. ULULULULULULUL. STIAMO UFFICIALMENTE INSIEME. QUANTO CAZZO POSSO ESSERE STATO FORTUNATO?! Ha fatto lei il primo passo e mi ha baciato. Non ho mai baciato qualcuno è una cosa indescrivibile soprattutto
+                        perché lei mi piace troppo. Spero che a lei sia piaciuto quanto a me :))
+                    </p>
+
+                </div>
+                <div>
+                    <img src="images/6.jpg" alt="" />
+                    <h1>26 Ottobre</h1>
+                    <p>Ti amo. Oggi fai 16 anni amore mio. Stiamo insieme da poco ma mi sembra di conoscerti da molto più tempo. Sto bene con te. Veramente bene. Sto bene forse come non sono mai stato. Sono fortunato ad averti conosciuto e ancora di più
+                        ad esserti piaciuto. Io voglio solo che tu stia bene. Qualsiasi mia energia se serve per farti sentire bene è ben spesa. Ti amo amore mio 💜
+                    </p>
+
+                </div>
+                <div>
+                    <img src="images/7.png" alt="" />
+                    <h1>28 Ottobre</h1>
+                    <p>UNA SERATA MAGNIFICA. Sono stato una favola. C'è da dirlo eh…non ho visto mezzo film però….AHAHAHAHAH avevo uno spettacolo migliore da guardare. Sono stato benissimo tra le sue braccia e spero che lei sia stata altrettanto bene. Ti
+                        amo💜
+
+                    </p>
+
+                </div>
+                <div>
+                    <img src="images/8.jpg" alt="" />
+                    <h1>6 Novembre</h1>
+                    <p>È da un po' che non scrivo. La relazione va benissimo. Sono contentissimo a volte penso anche di amarla troppo, ma poi mi convinco che non è mai abbastanza. Siamo stati in chiamata. Non so se è trasparito ma ero felicissimo. Ogni volta
+                        che parlava mi si scaldava il cuore. È venuta anche a casa mia. :) Sono stato benissimo. Il film non l'ho visto un'altra volta AHAHAHAH. Penso di essere drogato di lei. Mi manca ogni volta che se ne va. 💜</p>
+
+                </div>
+                <div>
+                    <img src="images/9.jpg" alt="" />
+                    <h1>13 Novembre</h1>
+                    <p>Finalmente oggi faccio 16 anni. Quest'anno è diverso. Mi sento una persona nuova, diversa. Non mi sento diverso solo di aspetto fisico: cambio radicale dicono, ma mi sento diverso anche a livello mentale, più disciplinato, più maturo.
+                        Tante cose mi hanno cambiato ma soprattutto la palestra e la mia ragazza. Non volevo regali quest'anno. Ma tra tutti quelli che mi hanno fatto lo stesso uno emerge dalla mischia: Noemi. Sei il regalo più bello che potessi desiderare.
+                        Sei fantastica. Ti amo perché sei tu. Ti amo senza scopo. Ti amo perché ti amo.💜
+                    </p>
+
+                </div>
+                <div>
+                    <img src="images/10.png" alt="" />
+                    <h1>...</h1>
+                    <p>Amore mio. La nostra storia passata finisce qui. Spero che possiamo aggiungere tanti altri ricordi. …💜
+                    </p>
+                    <a href="../index.html" class="article">...</a>
+                    <a href="../Loading/loading.html" class="demo">💜</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(function() {
+            var $mybook = $('#mybook');
+            var $bttn_next = $('#next_page_button');
+            var $bttn_prev = $('#prev_page_button');
+            var $loading = $('#loading');
+            var $mybook_images = $mybook.find('img');
+            var cnt_images = $mybook_images.length;
+            var loaded = 0;
+
+            $mybook_images.each(function() {
+                var $img = $(this);
+                var source = $img.attr('src');
+                $('<img/>').load(function() {
+                    ++loaded;
+                    if (loaded == cnt_images) {
+                        $loading.hide();
+                        $bttn_next.show();
+                        $bttn_prev.show();
+                        $mybook.show().booklet({
+                            name: null, //  
+                            width: 800, //  
+                            height: 500, //   
+                            speed: 600, //  
+                            direction: 'LTR', //  
+                            //  
+                            next: $bttn_next, //  
+                            prev: $bttn_prev, //  
+
+                        });
+                        Cufon.refresh();
+                    }
+                }).attr('src', source);
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>
